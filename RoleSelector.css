@@ -1,0 +1,202 @@
+/* Role Selector Styles */
+.role-selector {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  direction: rtl;
+}
+
+.role-selector-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.role-selector-header h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.role-selector-header p {
+  font-size: 1.1rem;
+  color: #6c757d;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.role-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid #e9ecef;
+  position: relative;
+  overflow: hidden;
+}
+
+.role-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--role-color);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.role-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border-color: var(--role-color);
+}
+
+.role-card:hover::before {
+  transform: scaleX(1);
+}
+
+.role-card.selected {
+  border-color: var(--role-color);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.95));
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.role-card.selected::before {
+  transform: scaleX(1);
+}
+
+.role-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.role-card h3 {
+  font-size: 1.25rem;
+  color: #2c3e50;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.role-card p {
+  color: #6c757d;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.selection-indicator {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--role-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Hover effects for different roles */
+.role-card[style*="--role-color: #007bff"]:hover {
+  background: linear-gradient(135deg, rgba(0, 123, 255, 0.05), rgba(255, 255, 255, 1));
+}
+
+.role-card[style*="--role-color: #28a745"]:hover {
+  background: linear-gradient(135deg, rgba(40, 167, 69, 0.05), rgba(255, 255, 255, 1));
+}
+
+.role-card[style*="--role-color: #6f42c1"]:hover {
+  background: linear-gradient(135deg, rgba(111, 66, 193, 0.05), rgba(255, 255, 255, 1));
+}
+
+.role-card[style*="--role-color: #fd7e14"]:hover {
+  background: linear-gradient(135deg, rgba(253, 126, 20, 0.05), rgba(255, 255, 255, 1));
+}
+
+.role-card[style*="--role-color: #20c997"]:hover {
+  background: linear-gradient(135deg, rgba(32, 201, 151, 0.05), rgba(255, 255, 255, 1));
+}
+
+.role-card[style*="--role-color: #ffc107"]:hover {
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.05), rgba(255, 255, 255, 1));
+}
+
+.role-card[style*="--role-color: #e83e8c"]:hover {
+  background: linear-gradient(135deg, rgba(232, 62, 140, 0.05), rgba(255, 255, 255, 1));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .role-selector {
+    padding: 1rem;
+  }
+  
+  .role-selector-header h2 {
+    font-size: 2rem;
+  }
+  
+  .roles-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .role-card {
+    padding: 1.5rem;
+  }
+  
+  .role-icon {
+    font-size: 2.5rem;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .role-selector-header h2 {
+    font-size: 1.75rem;
+  }
+  
+  .role-selector-header p {
+    font-size: 1rem;
+  }
+  
+  .role-card {
+    padding: 1.25rem;
+  }
+  
+  .role-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .role-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Arabic Font Support */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+.role-selector * {
+  font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
