@@ -1,7 +1,9 @@
-from src.models.user import db
+from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime, timedelta
 from enum import Enum
 import uuid
+
+db = SQLAlchemy()
 
 class UserRole(Enum):
     STUDENT = "student"
